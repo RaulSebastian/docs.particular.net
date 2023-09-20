@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: receiver
+  labels:
+    app: nservicebus-sample-kubernetes-simple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: receiver
+  template:
+    metadata:
+      labels:
+        app: nservicebus-sample-kubernetes-simple
+        service: receiver
+    spec:
+      containers:
+        - name: receiver
+          image: example.org/receiver:latest
+          imagePullPolicy: IfNotPresent

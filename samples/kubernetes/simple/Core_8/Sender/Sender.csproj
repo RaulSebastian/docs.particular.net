@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ContainerImageTag>$(Version)</ContainerImageTag>
+        <ContainerRepository>sender</ContainerRepository>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.400" />
+        <PackageReference Include="NServiceBus.Extensions.Hosting" Version="2.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="6.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.*" />
+        <PackageReference Include="NServiceBus" Version="8.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Messages\Messages.csproj" />
+    </ItemGroup>
+
+</Project>
