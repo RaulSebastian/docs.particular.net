@@ -98,14 +98,14 @@ Automatically removing these attachments can cause problems in many situations. 
 NOTE: A combination of these techniques may be used.
 
 - Use a different transport or different tier (e.g. Azure Service Bus _Premium_ instead of _Standard_).
-- Message compression: this works well on text-based payloads like XML and JSON, or any payload (text or binary) that contains repetitive data.
+- Message compression: This works well on text-based payloads like XML and JSON, or any payload (text or binary) that contains repetitive data.
   - See the [message mutator example demonstrating message body compression](/samples/messagemutators/).
 - Stream-based properties: The sample showing [handling large stream properties via pipeline](/samples/pipeline/stream-properties/) demonstrates a purely stream-based approach (rather than loading the full payload into memory) using the NServiceBus pipeline.
 - A more efficient serializer: For example, a binary serializer. Most serializers can be added with a few lines of code.
    - Several [serializers are maintained by the community](/nservicebus/community/#serializers).
-- Attachments: the community maintained [NServiceBus.Attachments](/nservicebus/community/#nservicebus-attachments) package may be used for unbounded binary payloads.
-  - Read on demand: attachments are only retrieved when read by a consumer.
-  - Reduced memory usage: the package avoids the use of a base64 serializer which results in a significant reduction in memory usage.
+- Attachments: The community maintained [NServiceBus.Attachments](/nservicebus/community/#nservicebus-attachments) package may be used for unbounded binary payloads. Although it has functionality similar to the [DataBus](https://docs.particular.net/nservicebus/messaging/databus/), it has the following advantages.
+  - Read on demand: Attachments are only retrieved when read by a consumer. Moreover, it processes all data items via an IAsyncEnumerable
+  - Reduced memory usage: The package avoids the use of a base64 serializer which results in a significant reduction in memory usage.
 
 ## Other considerations
 
