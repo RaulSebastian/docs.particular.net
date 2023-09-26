@@ -21,7 +21,7 @@ If the location is not available upon sending, the send operation will fail. Whe
 
 ## Transport message size limits
 
-The data bus should be used when it expected that message size may exceed the message size limit for the transport being used.
+The data bus should be used when it is expected that message size may exceed the message size limit for the transport being used.
 
 Note: Not all transports have message size limits and Azure Service Bus has increased its limit over time. The documentation for each transport should be checked for the latest message size limit.
 
