@@ -103,8 +103,9 @@ NOTE: A combination of these techniques may be used.
 - Stream-based properties: The sample showing [handling large stream properties via pipeline](/samples/pipeline/stream-properties/) demonstrates a purely stream-based approach (rather than loading the full payload into memory) using the NServiceBus pipeline.
 - A more efficient serializer: For example, a binary serializer. Most serializers can be added with a few lines of code.
    - Several [serializers are maintained by the community](/nservicebus/community/#serializers).
-- Attachments: The community maintained [NServiceBus.Attachments](/nservicebus/community/#nservicebus-attachments) package may be used for unbounded binary payloads. Although it has functionality similar to the [DataBus](nservicebus/messaging/databus/), it has the following advantages.
-  - Read on demand: Attachments are only retrieved when read by a consumer. Moreover, it processes all data items via an IAsyncEnumerable
+- Attachments: The community maintained [NServiceBus.Attachments](/nservicebus/community/#nservicebus-attachments) package may be used for unbounded binary payloads. The package is similar to the Data Bus but has some differences:
+  - Read on demand: Attachments are only retrieved when read by a consumer.
+  - Async enumeration: The package supports processing all data items using an `IAsyncEnumerable`.
   - Reduced memory usage: The package avoids the use of a base64 serializer which results in a significant reduction in memory usage.
 
 ## Other considerations
