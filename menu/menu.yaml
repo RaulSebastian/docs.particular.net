@@ -498,7 +498,7 @@
         Title: Roslyn analyzers
     - Url: nservicebus/hosting/azure-functions-service-bus/in-process
       Title: Azure Functions with Service Bus (In Process)
-      Articles:        
+      Articles:
       - Url: nservicebus/hosting/azure-functions-service-bus/in-process/custom-triggers
         Title: Custom triggers
       - Url: nservicebus/hosting/azure-functions-service-bus/in-process/analyzers
@@ -1354,6 +1354,8 @@
       Url: servicecontrol/upgrades/zero-downtime
     - Title: Support policy
       Url: servicecontrol/upgrades/support-policy
+    - Title: Version 4 to 5
+      Url: servicecontrol/upgrades/4to5
     - Title: Version 3 to 4
       Url: servicecontrol/upgrades/3to4
     - Title: Version 2 to 3
